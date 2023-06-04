@@ -4,3 +4,6 @@ require:
 AllCops:
   Exclude:
     - "bin/*"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
