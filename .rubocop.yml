@@ -8,3 +8,10 @@ AllCops:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+RSpec/ContextWording:
+  AllowedPatterns:
+    - 'とき$'
+
+RSpec/DescribedClass:
+  Enabled: false
