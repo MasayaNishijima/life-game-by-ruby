@@ -18,8 +18,10 @@ RSpec.describe Cell do
       end
     end
 
-    it '生死を指定していないセルが生成できないこと' do
-      expect { Cell.new }.to raise_error ArgumentError
+    describe '異常系のテスト' do
+      it '生死を指定していないセルが生成できないこと' do
+        expect { Cell.new }.to raise_error ArgumentError
+      end
     end
   end
 end
