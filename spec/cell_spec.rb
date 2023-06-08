@@ -18,9 +18,25 @@ RSpec.describe Cell do
       end
     end
 
-    describe '異常系のテスト' do
-      it '生死を指定していないセルが生成できないこと' do
+    describe 'セル生成の異常系' do
+      it '生死を指定していない場合エラーになること' do
         expect { Cell.new }.to raise_error ArgumentError
+      end
+
+      it '文字列ではエラーになること' do
+        expect { Cell.new('alive') }.to raise_error ArgumentError
+      end
+
+      it '数字ではエラーになること' do
+        expect { Cell.new(1) }.to raise_error ArgumentError
+      end
+
+      it ':alive, :death以外のシンボルでエラーになること' do
+        expect { Cell.new(:life_game) }.to raise_error ArgumentError
+      end
+
+      it ':alive, :deathを同時に与えられたときエラーになること' do
+        expect { Cell.new(:alive, :death) }.to raise_error ArgumentError
       end
     end
   end
